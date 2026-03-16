@@ -1,0 +1,309 @@
+/* --- БАЗОВІ НАЛАШТУВАННЯ --- */
+:root {
+    --primary-color: #4f46e5;
+    --secondary-color: #1e1b4b;
+    --text-dark: #334155;
+    --text-light: #f8fafc;
+    --bg-light: #f1f5f9;
+    --bg-white: #ffffff;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-dark);
+    scroll-behavior: smooth;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-padding {
+    padding: 80px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 50px;
+    color: var(--secondary-color);
+}
+
+/* --- КНОПКИ --- */
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.btn-primary { background-color: var(--primary-color); color: white; }
+.btn-primary:hover { background-color: #4338ca; transform: translateY(-2px); }
+.btn-outline { background-color: transparent; color: var(--primary-color); border: 2px solid var(--primary-color); }
+.btn-outline:hover { background-color: var(--primary-color); color: white; }
+
+/* --- ШАПКА --- */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background-color: var(--bg-white);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+/* --- ЛОГОТИП У ШАПЦІ --- */
+.logo { 
+    font-size: 24px; 
+    font-weight: bold; 
+    color: var(--secondary-color); 
+    display: flex; /* Робимо так, щоб значок і текст стояли в ряд */
+    align-items: center; /* Вирівнюємо їх чітко по центру */
+    gap: 12px; /* Робимо гарний відступ між вашим значком і текстом */
+}
+
+/* Налаштування розміру для вашого SVG значка */
+.my-custom-logo {
+    height: 36px; /* Висота логотипу. Можете зробити більше або менше */
+    width: auto;
+    flex-shrink: 0; /* Щоб логотип не стискався на маленьких екранах */
+}
+.logo span { color: var(--primary-color); }
+.navigation a { margin-left: 20px; text-decoration: none; color: var(--text-dark); font-weight: 500; }
+/* --- БУРГЕР-МЕНЮ (КНОПКА) --- */
+.hamburger {
+    display: none; /* Ховаємо кнопку на великих екранах */
+    font-size: 28px;
+    background: none;
+    border: none;
+    color: var(--secondary-color);
+    cursor: pointer;
+}
+/* --- ГОЛОВНИЙ ЕКРАН (HERO) --- */
+.hero { 
+    background-color: var(--secondary-color); 
+    color: var(--text-light); 
+    padding: 100px 0; /* Змінили відступи */
+}
+
+.hero-container {
+    display: flex; /* Робимо дві колонки */
+    align-items: center; /* Вирівнюємо їх по центру вертикалі */
+    justify-content: space-between;
+    gap: 40px; /* Відстань між текстом і картинкою */
+}
+
+.hero-text-box { 
+    flex: 1; /* Текст займає половину місця */
+}
+
+.hero h1 { 
+    font-size: 54px; 
+    margin-bottom: 20px; 
+    line-height: 1.2; 
+}
+
+.hero p { 
+    font-size: 20px; 
+    margin-bottom: 40px; 
+    color: #cbd5e1; 
+}
+
+.hero-image-box {
+    flex: 1; /* Картинка займає іншу половину */
+    text-align: right;
+}
+
+.hero-img {
+    max-width: 100%; /* Картинка не вилізе за межі свого блоку */
+    border-radius: 12px; /* Заокруглюємо кути картинки */
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5); /* Додаємо глибоку тінь для об'єму */
+}
+
+/* --- СОЦІАЛЬНИЙ ДОКАЗ (Логотипи) --- */
+.trusted-by { background-color: var(--bg-light); padding: 40px 20px; text-align: center; border-bottom: 1px solid #e2e8f0; }
+.trusted-by p { font-size: 14px; color: #64748b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; }
+.logos-grid { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; }
+.logo-placeholder { font-size: 20px; font-weight: bold; color: #94a3b8; }
+
+/* --- СІТКИ (Grid) --- */
+.grid-3-cols { display: flex; justify-content: space-between; gap: 30px; }
+.grid-2-cols { display: flex; justify-content: space-between; gap: 30px; }
+
+/* --- КАРТКИ (Features, Testimonials) --- */
+.card {
+    background-color: var(--bg-white);
+    padding: 40px 30px;
+    border-radius: 12px;
+    text-align: center;
+    flex: 1; /* Займає рівну частину простору */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+}
+.card:hover { transform: translateY(-10px); }
+/* --- СТИЛІ ДЛЯ SVG ІКОНОК --- */
+.icon { 
+    margin-bottom: 20px; 
+    color: var(--primary-color); /* Фарбуємо іконки в наш головний колір */
+    display: flex;
+    justify-content: center; /* Вирівнюємо іконку по центру */
+}
+
+.icon svg {
+    transition: transform 0.3s ease; /* Додаємо плавність для майбутньої анімації */
+}
+
+/* Коли ми наводимо мишку на картку (.card:hover), іконка всередині неї трохи збільшується */
+.card:hover .icon svg {
+    transform: scale(1.15); 
+}
+.features { background-color: var(--bg-light); }
+
+/* --- ЯК ЦЕ ПРАЦЮЄ --- */
+.how-it-works { background-color: var(--bg-white); }
+.step { flex: 1; text-align: center; padding: 20px; }
+.step-number { 
+    width: 60px; height: 60px; 
+    background-color: var(--primary-color); color: white; 
+    border-radius: 50%; display: flex; align-items: center; justify-content: center; 
+    font-size: 24px; font-weight: bold; margin: 0 auto 20px; 
+}
+
+/* --- ВІДГУКИ --- */
+.testimonials { background-color: var(--bg-light); }
+.review-card { text-align: left; }
+.review-text { font-style: italic; font-size: 18px; margin-bottom: 20px; }
+.review-author { font-weight: bold; color: var(--primary-color); }
+
+/* --- FAQ (Акордеон) --- */
+.faq { background-color: var(--bg-white); }
+.faq-container { max-width: 800px; margin: 0 auto; }
+.faq-item { border-bottom: 1px solid #e2e8f0; margin-bottom: 10px; }
+.faq-question {
+    width: 100%; text-align: left; background: none; border: none;
+    padding: 20px 0; font-size: 18px; font-weight: bold; color: var(--secondary-color);
+    cursor: pointer; display: flex; justify-content: space-between; align-items: center;
+}
+.faq-answer {
+    max-height: 0; overflow: hidden; /* Приховуємо відповідь за замовчуванням */
+    transition: max-height 0.3s ease;
+}
+.faq-answer p { padding-bottom: 20px; color: #475569; margin: 0; }
+/* Клас, який додає JS для показу відповіді */
+.faq-item.active .faq-answer { max-height: 200px; }
+.faq-item.active .faq-question span { transform: rotate(45deg); transition: 0.3s; } /* Хрестик */
+
+/* --- КОНТАКТНА ФОРМА --- */
+.contact { background-color: var(--bg-light); }
+.contact-box { background: var(--bg-white); max-width: 600px; margin: 0 auto; padding: 40px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+.form-group { margin-bottom: 20px; }
+.form-group label { display: block; margin-bottom: 8px; font-weight: 600; }
+.form-group input, .form-group textarea {
+    width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 6px;
+    font-family: inherit; font-size: 16px; box-sizing: border-box;
+}
+.form-group input:focus, .form-group textarea:focus {
+    outline: none; border-color: var(--primary-color);
+}
+
+/* --- ПІДВАЛ --- */
+.footer { text-align: center; padding: 30px; background-color: #0f172a; color: white; }
+/* --- АДАПТИВНІСТЬ ДЛЯ МОБІЛЬНИХ ПРИСТРОЇВ (МЕДІА-ЗАПИТИ) --- */
+/* --- АНІМАЦІЯ ПРИ ПРОКРУТЦІ (SCROLL REVEAL) --- */
+
+/* Початковий стан: елемент прозорий і трохи зміщений вниз */
+.hidden-element {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease-out; /* Плавність анімації (0.8 секунди) */
+}
+
+/* Кінцевий стан: елемент стає видимим і стає на своє місце */
+.show-element {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    /* 1. Зменшуємо загальні відступи, щоб зберегти місце на екрані */
+    .section-padding { 
+        padding: 40px 0; 
+    }
+    
+    /* 2. Зменшуємо розмір шрифту на головному екрані */
+    .hero h1 { 
+        font-size: 36px; 
+    }
+    .hero p { 
+        font-size: 16px; 
+    }
+    
+    /* 3. Перебудовуємо шапку: логотип зверху, кнопки під ним */
+    /* 3. Перебудовуємо шапку для мобільних */
+    .header { 
+        flex-direction: row; /* Залишаємо логотип і бургер в один ряд */
+        justify-content: space-between;
+        flex-wrap: wrap; /* Дозволяємо меню "впасти" під логотип */
+        padding: 15px 20px;
+    }
+
+    /* Показуємо кнопку бургер-меню на телефоні */
+    .hamburger {
+        display: block; 
+    }
+
+    /* Ховаємо навігацію за замовчуванням */
+    .navigation { 
+        display: none; /* Меню сховане */
+        width: 100%; /* Займає всю ширину */
+        flex-direction: column; 
+        align-items: center; 
+        gap: 15px; 
+        padding-top: 20px;
+        padding-bottom: 10px;
+    }
+
+    /* Цей клас ми будемо додавати через JavaScript, щоб показати меню */
+    .navigation.active {
+        display: flex;
+    }
+
+    .navigation a { 
+        margin-left: 0; 
+        width: 100%;
+        text-align: center;
+    }
+    
+    /* 4. ГОЛОВНА МАГІЯ: Перетворюємо колонки на один вертикальний ряд */
+    .grid-3-cols, 
+    .grid-2-cols { 
+        flex-direction: column; 
+        gap: 20px;
+    }
+    
+    /* 5. Зменшуємо відступи всередині форми та FAQ для мобільних */
+    .contact-box { 
+        padding: 20px; 
+    }
+    .faq-question {
+        font-size: 16px;
+    }
+    .hero-container {
+        flex-direction: column; /* На телефоні колонки стають одна під одною */
+        text-align: center;
+    }
+}
